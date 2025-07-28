@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "advanced-server": {
+      "command": "python",
+      "args": ["C:/Users/Hezron Kimutai/projects/mcp_server/run_github_mcp.py"],
+      "disabled": false,
+      "autoApprove": [
+        "scrape_website", 
+        "analyze_data", 
+        "system_monitor",
+        "file_operations",
+        "api_integration", 
+        "database_query",
+        "generate_report"
+      ]
+    }
+  }
+}
