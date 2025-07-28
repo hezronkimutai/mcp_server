@@ -12,8 +12,8 @@ import subprocess
 from pathlib import Path
 
 # Configuration
-GITHUB_USER = "YOUR_USERNAME"  # Replace with your GitHub username
-REPO_NAME = "advanced-mcp-server"
+GITHUB_USER = "hezronkimutai"
+REPO_NAME = "mcp_server"
 BRANCH = "main"
 SCRIPT_NAME = "advanced_mcp_server.py"
 REQUIREMENTS_NAME = "requirements.txt"

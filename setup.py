@@ -22,7 +22,7 @@ setup(
     description="Advanced Model Context Protocol (MCP) server with comprehensive capabilities",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/YOUR_USERNAME/advanced-mcp-server",
+    url="https://github.com/hezronkimutai/mcp_server",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 4 - Beta",

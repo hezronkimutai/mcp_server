@@ -62,17 +62,53 @@ chmod +x advanced_mcp_server.py
 
 ## MCP Configuration
 
-Add this server to your MCP configuration file:
+## Quick Start - Run from GitHub
+
+The easiest way to use this server is to run it directly from GitHub:
 
 ```json
 {
   "mcpServers": {
     "advanced-server": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/hezronkimutai/mcp_server.git", "python", "advanced_mcp_server.py"],
+      "disabled": false,
+      "autoApprove": [
+        "scrape_website",
+        "analyze_data", 
+        "system_monitor",
+        "file_operations",
+        "api_integration",
+        "database_query",
+        "generate_report"
+      ]
+    }
+  }
+}
+```
+
+## Local Installation
+
+If you prefer to run locally:
+
+1. Clone the repository:
+```bash
+git clone https://github.com/hezronkimutai/mcp_server.git
+cd mcp_server
+```
+
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+3. Add to your MCP configuration:
+```json
+{
+  "mcpServers": {
+    "advanced-server": {
       "command": "python",
-      "args": ["path/to/advanced_mcp_server.py"],
-      "env": {
-        "PYTHONPATH": "path/to/server/directory"
-      },
+      "args": ["path/to/mcp_server/advanced_mcp_server.py"],
       "disabled": false,
       "autoApprove": [
         "scrape_website",
@@ -274,6 +310,63 @@ This server is designed to be extensible. You can add new tools by:
 2. Implementing the tool handler in `handle_call_tool()`
 3. Creating the corresponding method in the class
 4. Updating the documentation
+
+## GitHub Configuration Options
+
+This repository provides multiple ways to run the MCP server directly from GitHub:
+
+### Option 1: uvx with Git (Recommended)
+```json
+{
+  "mcpServers": {
+    "advanced-server": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/hezronkimutai/mcp_server.git", "python", "advanced_mcp_server.py"],
+      "disabled": false
+    }
+  }
+}
+```
+
+### Option 2: Direct Python Execution
+```json
+{
+  "mcpServers": {
+    "advanced-server": {
+      "command": "python",
+      "args": ["-c", "import urllib.request; exec(urllib.request.urlopen('https://raw.githubusercontent.com/hezronkimutai/mcp_server/main/advanced_mcp_server.py').read())"],
+      "disabled": false
+    }
+  }
+}
+```
+
+### Option 3: Using Wrapper Script
+Download `github_mcp_runner.py` and use:
+```json
+{
+  "mcpServers": {
+    "advanced-server": {
+      "command": "python",
+      "args": ["github_mcp_runner.py"],
+      "disabled": false
+    }
+  }
+}
+```
+
+## Repository Structure
+
+```
+mcp_server/
+├── advanced_mcp_server.py      # Main MCP server
+├── requirements.txt            # Python dependencies
+├── setup.py                   # Package setup
+├── github_mcp_runner.py       # GitHub wrapper script
+├── mcp_config_*.json          # Ready-to-use configurations
+├── mcp_github_configs.md      # Detailed configuration guide
+└── README.md                  # This file
+```
 
 ## License
 

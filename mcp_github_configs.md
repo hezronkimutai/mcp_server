@@ -9,7 +9,7 @@ Here are different ways to configure your MCP server to run directly from GitHub
   "mcpServers": {
     "advanced-server": {
       "command": "uvx",
-      "args": ["--from", "git+https://github.com/YOUR_USERNAME/advanced-mcp-server.git", "python", "advanced_mcp_server.py"],
+      "args": ["--from", "git+https://github.com/hezronkimutai/mcp_server.git", "python", "advanced_mcp_server.py"],
       "env": {
         "PYTHONPATH": "."
       },
@@ -35,7 +35,7 @@ Here are different ways to configure your MCP server to run directly from GitHub
   "mcpServers": {
     "advanced-server": {
       "command": "python",
-      "args": ["-c", "import urllib.request; exec(urllib.request.urlopen('https://raw.githubusercontent.com/YOUR_USERNAME/advanced-mcp-server/main/advanced_mcp_server.py').read())"],
+      "args": ["-c", "import urllib.request; exec(urllib.request.urlopen('https://raw.githubusercontent.com/hezronkimutai/mcp_server/main/advanced_mcp_server.py').read())"],
       "disabled": false,
       "autoApprove": [
         "scrape_website", 
@@ -85,7 +85,7 @@ If you structure it as a proper Python package:
   "mcpServers": {
     "advanced-server": {
       "command": "uvx",
-      "args": ["git+https://github.com/YOUR_USERNAME/advanced-mcp-server.git"],
+      "args": ["git+https://github.com/hezronkimutai/mcp_server.git"],
       "disabled": false,
       "autoApprove": [
         "scrape_website", 
@@ -123,4 +123,4 @@ If you structure it as a proper Python package:
 - Works reliably across different systems
 - Supports proper Python package structure
 
-Replace `YOUR_USERNAME` with your actual GitHub username once you publish the repository.
+The repository is now live at: https://github.com/hezronkimutai/mcp_server
